@@ -113,18 +113,46 @@ const Navbar = () => {
                     gap: '8px',
                     flexWrap: 'wrap'
                   }}>
-                    <img 
-                      src={user.photoURL} 
-                      alt={user.displayName}
+                    {user.photoURL ? (
+                      <img 
+                        src={user.photoURL} 
+                        alt={user.displayName}
+                        style={{
+                          width: 'clamp(28px, 5vw, 32px)',
+                          height: 'clamp(28px, 5vw, 32px)',
+                          borderRadius: '50%',
+                          objectFit: 'cover',
+                          border: '2px solid #007bff'
+                        }}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                    ) : null}
+                    <div 
                       style={{
                         width: 'clamp(28px, 5vw, 32px)',
                         height: 'clamp(28px, 5vw, 32px)',
-                        borderRadius: '50%'
+                        borderRadius: '50%',
+                        backgroundColor: '#007bff',
+                        color: 'white',
+                        display: user.photoURL ? 'none' : 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 'clamp(12px, 3vw, 14px)',
+                        fontWeight: 'bold'
                       }}
-                    />
+                    >
+                      {user.displayName?.charAt(0)?.toUpperCase()}
+                    </div>
                     <span style={{ 
                       fontSize: 'clamp(12px, 3vw, 14px)',
-                      display: window.innerWidth < 480 ? 'none' : 'inline'
+                      display: window.innerWidth < 480 ? 'none' : 'inline',
+                      maxWidth: '100px',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap'
                     }}>
                       {user.displayName}
                     </span>
