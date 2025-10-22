@@ -525,6 +525,29 @@ input:focus, select:focus, textarea:focus {
   transition: transform 0.2s ease;
 }
 
+.desktop-avatar {
+  display: flex;
+  align-items: center;
+}
+
+.desktop-avatar img,
+.desktop-avatar .avatar-placeholder {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.desktop-avatar .avatar-placeholder {
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
 /* Product Grid */
 .products-grid {
   display: grid;
@@ -794,6 +817,10 @@ input:focus, select:focus, textarea:focus {
   }
   
   .user-actions {
+    display: none;
+  }
+  
+  .desktop-avatar {
     display: none;
   }
   

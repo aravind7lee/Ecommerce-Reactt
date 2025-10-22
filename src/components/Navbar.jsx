@@ -96,6 +96,15 @@ const Navbar = () => {
                   )}
                   
                   <div className="user-actions">
+                    <div className="desktop-avatar">
+                      {user.photoURL ? (
+                        <img src={user.photoURL} alt={user.displayName} />
+                      ) : (
+                        <div className="avatar-placeholder">
+                          {user.displayName?.charAt(0)?.toUpperCase()}
+                        </div>
+                      )}
+                    </div>
                     <Link to="/dashboard" className="btn btn-outline">
                       <User size={16} />
                       Account
