@@ -136,7 +136,7 @@ const ProductCard = ({ product }) => {
             color: '#007bff',
             textShadow: '0 1px 2px rgba(0,123,255,0.1)'
           }}>
-            ${product.price}
+            ₹{product.price.toLocaleString('en-IN')}
           </span>
           <span style={{ 
             fontSize: 'clamp(0.8rem, 2.5vw, 0.9rem)',

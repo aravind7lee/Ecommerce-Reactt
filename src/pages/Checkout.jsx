@@ -159,13 +159,18 @@ const Checkout = () => {
     }
   };
 
-  if (!user) {
-    navigate('/login');
-    return null;
-  }
+  useEffect(() => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+    if (items.length === 0) {
+      navigate('/cart');
+      return;
+    }
+  }, [user, items.length, navigate]);
 
-  if (items.length === 0) {
-    navigate('/cart');
+  if (!user || items.length === 0) {
     return null;
   }
 
@@ -313,14 +318,14 @@ const Checkout = () => {
             {items.map(item => (
               <div key={item.id} className="flex flex-between mb-10">
                 <span>{item.name} x {item.quantity}</span>
-                <span>${(item.price * item.quantity).toFixed(2)}</span>
+                <span>₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
               </div>
             ))}
             
             <div style={{ borderTop: '1px solid #eee', paddingTop: '10px', marginTop: '10px' }}>
               <div className="flex flex-between mb-10">
                 <span>Subtotal:</span>
-                <span>${getTotalPrice().toFixed(2)}</span>
+                <span>₹{getTotalPrice().toLocaleString('en-IN')}</span>
               </div>
               
               <div className="flex flex-between mb-10">
@@ -333,7 +338,7 @@ const Checkout = () => {
                 fontWeight: 'bold'
               }}>
                 <span>Total:</span>
-                <span>${getTotalPrice().toFixed(2)}</span>
+                <span>₹{getTotalPrice().toLocaleString('en-IN')}</span>
               </div>
             </div>
             
@@ -354,7 +359,7 @@ const Checkout = () => {
                 </>
               ) : (
                 <>
-                  <span>🛒</span> Place Order - ${getTotalPrice().toFixed(2)}
+                  <span>🛒</span> Place Order - ₹{getTotalPrice().toLocaleString('en-IN')}
                 </>
               )}
             </button>

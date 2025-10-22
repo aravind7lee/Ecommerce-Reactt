@@ -124,7 +124,7 @@ const Dashboard = () => {
                 color: '#007bff', 
                 fontWeight: 'bold',
                 fontSize: 'clamp(0.9rem, 3vw, 1rem)'
-              }}>${item.price}</p>
+              }}>₹{item.price.toLocaleString('en-IN')}</p>
             </div>
           ))}
         </div>
@@ -162,7 +162,7 @@ const Dashboard = () => {
                 {order.items.map(item => (
                   <div key={item.id} className="flex flex-between mb-10">
                     <span>{item.name} x {item.quantity}</span>
-                    <span>${(item.price * item.quantity).toFixed(2)}</span>
+                    <span>₹{(item.price * item.quantity).toLocaleString('en-IN')}</span>
                   </div>
                 ))}
               </div>
@@ -173,7 +173,7 @@ const Dashboard = () => {
                 fontWeight: 'bold'
               }}>
                 <span>Total Amount:</span>
-                <span>${order.totalAmount.toFixed(2)}</span>
+                <span>₹{order.totalAmount.toLocaleString('en-IN')}</span>
               </div>
             </div>
           ))}

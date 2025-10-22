@@ -76,7 +76,7 @@ const Cart = () => {
                 <div style={{ flex: 1 }}>
                   <h3 style={{ marginBottom: '10px' }}>{item.name}</h3>
                   <p style={{ color: '#666', marginBottom: '10px' }}>
-                    ${item.price} each
+                    ₹{item.price.toLocaleString('en-IN')} each
                   </p>
                   
                   <div className="flex" style={{ 
@@ -122,7 +122,7 @@ const Cart = () => {
                       flexWrap: 'wrap'
                     }}>
                       <span style={{ fontWeight: 'bold' }}>
-                        ${(item.price * item.quantity).toFixed(2)}
+                        ₹{(item.price * item.quantity).toLocaleString('en-IN')}
                       </span>
                       
                       <button
@@ -146,7 +146,7 @@ const Cart = () => {
             
             <div className="flex flex-between mb-10">
               <span>Subtotal:</span>
-              <span>${getTotalPrice().toFixed(2)}</span>
+              <span>₹{getTotalPrice().toLocaleString('en-IN')}</span>
             </div>
             
             <div className="flex flex-between mb-10">
@@ -161,7 +161,7 @@ const Cart = () => {
               fontWeight: 'bold'
             }}>
               <span>Total:</span>
-              <span>${getTotalPrice().toFixed(2)}</span>
+              <span>₹{getTotalPrice().toLocaleString('en-IN')}</span>
             </div>
             
             <Link 
