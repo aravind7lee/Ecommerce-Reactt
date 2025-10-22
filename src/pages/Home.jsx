@@ -112,11 +112,7 @@ const Home = () => {
             Showing {filteredAndSortedProducts.length} of {products.length} products
           </div>
           
-          <div className="grid" style={{
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-            gap: 'clamp(20px, 4vw, 30px)',
-            padding: '10px 0'
-          }}>
+          <div className="products-grid">
             {filteredAndSortedProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}

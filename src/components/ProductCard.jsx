@@ -39,23 +39,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div 
-      className="card" 
-      style={{ 
-        position: 'relative',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-        cursor: 'pointer',
-        overflow: 'hidden'
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateY(-5px)';
-        e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateY(0)';
-        e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
-      }}
-    >
+    <div className="product-card" style={{ position: 'relative' }}>
       {product.stock === 0 && (
         <div style={{
           position: 'absolute',
