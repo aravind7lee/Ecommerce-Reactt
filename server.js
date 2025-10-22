@@ -16,6 +16,20 @@ server.use((req, res, next) => {
 });
 
 server.use(middlewares);
+
+// Root route
+server.get('/', (req, res) => {
+  res.json({
+    message: 'E-Commerce API Server is running!',
+    endpoints: {
+      products: '/api/products',
+      categories: '/api/categories',
+      orders: '/api/orders',
+      addresses: '/api/addresses'
+    }
+  });
+});
+
 server.use('/api', router);
 
 server.listen(port, () => {

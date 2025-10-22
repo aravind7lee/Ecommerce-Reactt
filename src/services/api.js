@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? (import.meta.env.VITE_API_BASE_URL || 'https://YOUR_ACTUAL_RENDER_URL.onrender.com/api')
+  ? (import.meta.env.VITE_API_BASE_URL || 'https://ecommerce-api-kt5a.onrender.com/api')
   : 'http://localhost:3001';
 
 const api = axios.create({
