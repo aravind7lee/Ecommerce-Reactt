@@ -5,7 +5,7 @@ A complete e-commerce application built with React, featuring product management
 ## Features
 
 ### Product Management
-- Display products dynamically from fake REST API
+- Display products dynamically from REST API
 - Product categories and filtering
 - Dynamic search functionality
 - Sorting by name, price, and stock
@@ -35,7 +35,7 @@ A complete e-commerce application built with React, featuring product management
 - **State Management**: React Context API
 - **Styling**: Custom CSS with responsive design
 - **Icons**: Lucide React
-- **API**: JSON Server (fake REST API)
+- **API**: JSON Server (REST API)
 - **Build Tool**: Vite
 
 ## Project Structure
@@ -98,7 +98,7 @@ VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
 ```bash
 npm run json-server
 ```
-This will start the fake REST API on `http://localhost:3001`
+This will start the REST API on `http://localhost:3001`
 
 #### Terminal 2: Start React Development Server
 ```bash
