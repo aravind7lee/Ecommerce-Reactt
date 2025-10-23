@@ -75,7 +75,7 @@ src/
 npm install
 ```
 
-### 2. Install JSON Server (for fake API)
+### 2. Install JSON Server (for API)
 ```bash
 npm install -g json-server
 ```
